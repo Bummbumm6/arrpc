@@ -63,8 +63,8 @@ export default class WSServer {
 
     if (process.env.ARRPC_DEBUG) log(`new connection! origin:`, origin, JSON.parse(JSON.stringify(params)));
 
-    if (origin !== '' && ![ 'https://discord.com', 'https://ptb.discord.com', 'https://canary.discord.com' ].includes(origin)) {
-      log('disallowed origin', origin);
+    if (origin !== '') { // I am just testing please don't kill me
+      log('unknown origin', origin);
 
       socket.close();
       return;
